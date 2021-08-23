@@ -19,10 +19,6 @@ services:
     # tty: true
     ports:
       - "3000:3000"
-    # links:
-    #   - mysql:db
-    #   - postgres:db
-    #   - sqlserver:db
     # environment:
     #   TZ: Asia/Tokyo
     #   RAILS_MASTER_KEY:
@@ -48,12 +44,18 @@ services:
     image: mysql
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    networks:
+      default:
+        aliases: [db]
     profiles: ["muted"]
 
   postgres:
     image: postgres
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
+    networks:
+      default:
+        aliases: [db]
     profiles: ["muted"]
 
   sqlserver:
@@ -61,4 +63,7 @@ services:
     environment:
       ACCEPT_EULA: Y
       SA_PASSWORD: <YourStrong!Passw0rd>
+    networks:
+      default:
+        aliases: [db]
     profiles: ["muted"]
