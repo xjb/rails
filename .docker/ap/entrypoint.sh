@@ -5,6 +5,7 @@ function bootstrap(){
     if [ -f ./Gemfile ]; then
         bundle install
         bin/rails db:create db:migrate
+        bin/rails webpacker:install
     fi
 }
 

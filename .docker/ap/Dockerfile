@@ -49,6 +49,8 @@ ARG DB
 RUN bundle exec rails new . \
         # --minimal \
         # --api \
+        --skip-bundle \
+        --skip-webpack-install \
         ${DB:+"--database="}${DB}
 
 # config database.yml
