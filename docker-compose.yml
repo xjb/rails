@@ -27,6 +27,8 @@ services:
     #   - .env
     # volumes:
     #   - .:/workspace
+    #   - bundle-install-cache:/usr/local/bundle
+    #   - node_modules-cache:/workspace/node_modules
     # tmpfs:
     #   - /tmp
     #   - /workspace/tmp/pids:uid=1000,gid=1000
@@ -67,3 +69,7 @@ services:
       default:
         aliases: [db]
     profiles: ["muted"]
+
+volumes:
+  bundle-install-cache:
+  node_modules-cache:
