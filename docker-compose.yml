@@ -37,7 +37,14 @@ services:
       service: ap
     ports:
       - "1234:1234"
-    command: rdebug-ide --host 0.0.0.0 --port 1234 -- bin/rails server -b 0.0.0.0
+    command:
+      - bash
+      - -c
+      - |
+        sudo -E gem install ruby-debug-ide
+        sudo -E gem install debase
+        rdebug-ide --host 0.0.0.0 --port 1234 -- bin/rails server -b 0.0.0.0
+    restart: always
     profiles: ["muted"]
 
   mysql:
