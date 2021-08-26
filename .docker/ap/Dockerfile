@@ -105,3 +105,8 @@ ENV PATH ${PATH}:/opt/mssql-tools/bin
 # for development gems
 RUN sudo -E gem install ruby-debug-ide && \
     sudo -E gem install debase
+
+# webpack-dev-server
+RUN yarn remove webpack-dev-server ;\
+    yarn add --dev webpack-dev-server@3.11.2 --exact ;\
+    yarn install --check-files
