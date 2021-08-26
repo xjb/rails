@@ -25,11 +25,20 @@ services:
     #   SA_PASSWORD: <YourStrong!Passw0rd>
     # env_file:
     #   - .env
-    # volumes:
-    #   - .:/workspace
+    volumes:
+      # - .:/workspace
+      - workspace:/workspace
     # tmpfs:
     #   - /tmp
     #   - /workspace/tmp/pids:uid=1000,gid=1000
+
+  webpack:
+    image: ${COMPOSE_PROJECT_NAME:-rails}_ap
+    command: bin/webpack-dev-server
+    # Mount ap workspace volume
+    volumes:
+      # - .:/workspace
+      - workspace:/workspace
 
   # Use only either ap or debug.
   debug:
@@ -74,3 +83,6 @@ services:
       default:
         aliases: [db]
     profiles: ["muted"]
+
+volumes:
+  workspace:
