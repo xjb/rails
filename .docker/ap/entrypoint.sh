@@ -4,6 +4,8 @@ set -Eeo pipefail
 function bootstrap(){
     if [ -f ./Gemfile ]; then
         bundle install
+    fi
+    if [ -x ./bin/rails ]; then
         bin/rails db:create db:migrate
     fi
 }
