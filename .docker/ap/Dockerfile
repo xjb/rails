@@ -54,10 +54,9 @@ RUN bundle exec rails new . \
 # config database.yml
 # https://github.com/rails/rails/tree/main/railties/lib/rails/generators/rails/app/templates/config/databases
 RUN \
-    # postgresql (only development)
-    sed -i -r "s/#host:/host:/" config/database.yml ;\
-    sed -i -r "s/#username: $(basename ${APP_HOME})/username: postgres/" config/database.yml ;\
-    # postgresql, mysql, sqlserver
+    # postgresql
+    sed -i -r "s/adapter: postgresql/adapter: postgresql\n  username: postgres\n  host: db/" config/database.yml ;\
+    # mysql, sqlserver
     sed -i -r "s/localhost/db/" config/database.yml
 
 COPY entrypoint.sh /
