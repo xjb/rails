@@ -1,11 +1,11 @@
 FROM node:16.8.0-alpine AS node
-RUN tar cf node.tar.gz -C / usr/local/bin/* \
-                            usr/local/lib/node_modules \
-                            opt/yarn-* \
-                            --exclude=docker-entrypoint.sh
+RUN cd / && find usr/local/bin -type l | xargs tar cf node.tar.gz -C /
 
 FROM ruby:3.0.2-alpine AS production
 
+COPY --from=node /usr/local/bin/node /usr/local/bin
+COPY --from=node /usr/local/lib/node_modules /usr/local/lib/node_modules
+COPY --from=node /opt /opt
 WORKDIR /tmp
 COPY --from=node node.tar.gz .
 RUN tar xf node.tar.gz -C / ;\
