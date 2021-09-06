@@ -28,10 +28,42 @@
             ],
             "group": "test"
         },
+        {
+            "label": "Compose: Run rake task",
+            "type": "shell",
+            "command": "docker-compose",
+            "args": [
+                "run",
+                "--rm",
+                "--entrypoint",
+                "''",
+                "${input:pickService}",
+                // rake task
+                "bin/rails",
+                "${input:rakeTask}"
+            ],
+            "group": "test",
+        }
     ],
     "options": {
         "env": {
             "service": "ap"
         }
     },
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "rakeTask",
+            "description": "rake task?"
+        },
+        {
+            "id": "pickService",
+            "type": "pickString",
+            "description": "select service",
+            "options": [
+                "ap",
+            ],
+            "default": "ap"
+        }
+    ]
 }
