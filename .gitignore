@@ -1,0 +1,4 @@
+# User local settings
+.env
+docker-compose.override.y*ml
+compose.override.y*ml
