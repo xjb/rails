@@ -1,0 +1,24 @@
+{
+    "recommendations": [
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "ms-azuretools.vscode-docker",
+        "spmeesseman.vscode-taskexplorer",
+        "hediet.vscode-drawio",
+        "wmaurer.change-case",
+        "britesnow.vscode-toggle-quotes",
+        "albymor.increment-selection",
+        "medo64.render-crlf",
+        "shardulm94.trailing-spaces",
+        "coenraads.bracket-pair-colorizer-2",
+        "oderwat.indent-rainbow",
+        "esbenp.prettier-vscode",
+        "takumii.markdowntable",
+        "mushan.vscode-paste-image",
+        "adam-bender.commit-message-editor",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "donjayamanne.githistory",
+        "rebornix.ruby",
+        "redhat.vscode-yaml"
+    ]
+}
