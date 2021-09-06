@@ -109,8 +109,9 @@ RUN apk add --no-cache curl gnupg --virtual .build-dependencies -- && \
 ENV PATH ${PATH}:/opt/mssql-tools/bin
 
 # for development gems
-RUN gem install ruby-debug-ide && \
-    gem install debase
+RUN gem install ruby-debug-ide --pre && \
+    gem uninstall debase --all && \
+    gem install debase --pre
 
 USER ${USER:-root}
 WORKDIR ${APP_HOME}
