@@ -26,9 +26,9 @@ services:
     #   SA_PASSWORD: <YourStrong!Passw0rd>
     # env_file:
     #   - .env
-    volumes:
-      # - .:/workspace
-      - workspace:/workspace
+    # volumes:
+    #   # - .:/workspace
+    #   - workspace:/workspace
     # tmpfs:
     #   - /tmp
     #   - /workspace/tmp/pids:uid=1000,gid=1000
@@ -40,6 +40,7 @@ services:
     volumes:
       # - .:/workspace
       - workspace:/workspace
+    profiles: ["muted"]
 
   # Use only either ap or debug.
   debug:

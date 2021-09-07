@@ -45,7 +45,7 @@
             "group": "test",
         },
         {
-            "label": "Run rdebug-ide",
+            "label": "Dev Container: Run rdebug-ide",
             "type": "shell",
             "command": "rdebug-ide --host 0.0.0.0 --port 1234 -- bin/rails server -b 0.0.0.0",
             "group": "test",
