@@ -1,8 +1,9 @@
 version: "3.9"
 services:
   ap:
-    build:
-      context: .docker/ap
+    image: ghcr.io/xjb/rails:latest
+    # build:
+    #   context: .docker/ap
     #   args:
     #     USER:
     #     UID: 1000
