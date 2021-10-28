@@ -9,3 +9,7 @@ updates:
     directory: "/.docker/ap/" # Location of package manifests
     schedule:
       interval: "daily"
+  - package-ecosystem: "docker"
+    directory: "/.docker/alpine/"
+    schedule:
+      interval: "daily"
