@@ -1,7 +1,7 @@
 FROM node:17.3.1-alpine AS node
 RUN cd / && find usr/local/bin -type l | xargs tar cf node.tar.gz -C /
 
-FROM ruby:3.1.0-alpine AS production
+FROM ruby:3.1.1-alpine AS production
 
 COPY --from=node /usr/local/bin/node /usr/local/bin
 COPY --from=node /usr/local/lib/node_modules /usr/local/lib/node_modules
