@@ -1,4 +1,4 @@
-FROM node:17.5.0-alpine AS node
+FROM node:17.6.0-alpine AS node
 RUN cd / && find usr/local/bin -type l | xargs tar cf node.tar.gz -C /
 
 FROM ruby:3.1.1-alpine AS production
