@@ -8,8 +8,10 @@ updates:
   - package-ecosystem: "docker" # See documentation for possible values
     directory: "/.docker/ap/" # Location of package manifests
     schedule:
-      interval: "daily"
+#       interval: "daily"
+      interval: "monthly"
   - package-ecosystem: "docker"
     directory: "/.docker/alpine/"
     schedule:
-      interval: "daily"
+#       interval: "daily"
+      interval: "monthly"
