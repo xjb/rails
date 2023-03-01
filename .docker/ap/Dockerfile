@@ -4,7 +4,7 @@ RUN curl -sL https://deb.nodesource.com/setup_lts.x -O
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg -O
 
 
-FROM ruby:3.1.1 AS production
+FROM ruby:3.2.1 AS production
 # FROM ruby:3.0.2-buster AS production
 
 COPY --from=downloader /downloads/* /tmp
